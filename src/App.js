@@ -9,6 +9,7 @@ import HomepageBuilder from './containers/HomepageBuilder/HomepageBuilder';
 import About from './containers/About/About';
 import Contact from './containers/Contact/Contact';
 import Projects from './containers/Projects/Projects';
+import Footer from '../src/components/UI/Footer/Footer';
 
 class App extends Component {
   render () {
@@ -23,8 +24,13 @@ class App extends Component {
             <Route path="projects" component={Projects}/>
             <Route path="contact" component={Contact}/>
         </div>
+
+        <Footer>
+
+        </Footer>
       </div>
       </BrowserRouter>
+      
     );
   }
 }

@@ -30,3 +30,26 @@
     color: grey;
     background-color: #0054a4;
 }
+
+@media screen and (max-width: 500px) {
+    .HomepageContainer .name {
+        font-size: 0.80em;
+    }
+
+    .HomepageContainer .title {
+        font-size: 0.70em;
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .HomepageContainer .name {
+        font-size: 0.65em; 
+    }
+
+    .HomepageContainer .title {
+        font-size: 0.65em;
+        padding: 1px;
+        width: 250px;
+    }
+}

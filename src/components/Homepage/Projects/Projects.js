@@ -13,6 +13,7 @@ const projects = () => (
             <div className={classes.ProjectsContainer}>
                 <Project src={project1} alt="Project 1"></Project>
                 <Project src={project2} alt="Project 2"></Project>
+                <span className={classes.break}></span>
                 <Project src={project3} alt="Project 3"></Project>
             </div>
         </div>
