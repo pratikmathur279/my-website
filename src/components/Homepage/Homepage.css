@@ -1,0 +1,18 @@
+.Homepage {
+    display: flex;
+    flex-direction: column;
+}
+.HomePageContainer {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    height: 450px;
+    top: 55px;
+    overflow: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-image: url("../../assets/Images/cover.jpg");
+    background-repeat: inherit;
+    background-color: teal;
+}

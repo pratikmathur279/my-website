@@ -1,0 +1,11 @@
+.project {
+    background-color: #f1f1f1;
+    margin-left: 50px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.project img {
+    width: 20vw;    
+}

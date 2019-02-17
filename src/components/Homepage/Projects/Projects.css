@@ -1,0 +1,28 @@
+.Projects{
+    /* width: 75%; */
+    /* margin-top: 50px; */
+    position: relative;
+    padding: 10px;
+    margin-top: 80px;
+    height: 250px;
+    overflow: none;
+    text-align: center;
+    align-items: center;
+}
+
+.ProjectDiv{
+    display: block;
+    margin: auto 0;
+    /* margin: auto; */
+    left: 0;
+    top: 0;
+    text-align: center;
+    align-items: center;
+}
+
+.ProjectsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* height: 300px; */
+}
