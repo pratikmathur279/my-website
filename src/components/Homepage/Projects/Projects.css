@@ -2,7 +2,7 @@
     /* width: 75%; */
     /* margin-top: 50px; */
     position: relative;
-    padding: 10px;
+    padding: 0px;
     margin-top: 5vh;
     height: 350px;
     overflow: none;
@@ -30,12 +30,15 @@
     display: none;
 }
 
-@media (max-width: 499px){
-    /* .ProjectsContainer{
+@media (max-width: 500px){
+    .Projects {
+        height: fit-content;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .ProjectsContainer{
         flex-direction: column;
-    } */
-
-    .Project:nth-of-type(3n+1) {
-        clear: left
+        padding-bottom: 15px;
     }
 }

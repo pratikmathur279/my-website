@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Route, HashRouter, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 
 import Layout from './hoc/Layout/Layout';
 import classes from './App.css';
@@ -25,9 +25,7 @@ class App extends Component {
             <Route path="contact" component={Contact}/>
         </div>
 
-        <Footer>
-
-        </Footer>
+        <Footer />
       </div>
       </BrowserRouter>
       

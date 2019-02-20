@@ -1,0 +1,46 @@
+.projectBack {
+    background-color: #f1f1f1;
+    display: block;
+    margin-left: 2.5vw;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    height: 16vw;
+    width: 27vw;
+}
+
+.projectDesc{
+    width: 27vw;
+    height: 16vw;
+}
+
+.projectDesc h5{
+    margin-bottom: 0;
+    padding: 25px 5px 0 5px;
+}
+
+.projectDesc p {
+    font-size: 1.4vw;
+    padding: 5px;
+    height: fit-content;
+    line-height: 1.5em;
+    z-index: -90;
+}
+
+@media screen and (max-width: 500px){
+    .project {
+        margin-top: 15px;
+        height: auto;
+    }
+    
+    .project img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .project img {
+        width: 270px;
+    }
+}
