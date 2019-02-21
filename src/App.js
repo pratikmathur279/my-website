@@ -6,9 +6,9 @@ import Layout from './hoc/Layout/Layout';
 import classes from './App.css';
 
 import HomepageBuilder from './containers/HomepageBuilder/HomepageBuilder';
-import About from './containers/About/About';
-import Contact from './containers/Contact/Contact';
-import Projects from './containers/Projects/Projects';
+import AboutPageBuilder from './containers/AboutPageBuilder/AboutPageBuilder';
+import ContactPageBuilder from './containers/ContactPageBuilder/ContactPageBuilder';
+import ProjectsPageBuilder from './containers/ProjectsPageBuilder/ProjectsPageBuilder';
 import Footer from '../src/components/UI/Footer/Footer';
 
 class App extends Component {
@@ -20,9 +20,9 @@ class App extends Component {
         <Layout/>
         <div className="content">
         <Route exact path="/" component={HomepageBuilder}/>
-            <Route path="about" component={About}/>
-            <Route path="projects" component={Projects}/>
-            <Route path="contact" component={Contact}/>
+            <Route path="/about" component={AboutPageBuilder}/>
+            <Route path="/projects" component={ProjectsPageBuilder}/>
+            {/* <Route path="/contact" component={ContactPageBuilder}/> */}
         </div>
 
         <Footer />
