@@ -5,6 +5,7 @@ import Image from '../Images/Image';
 import Description from '../Description/Description';
 
 const AboutPage = (props) => {
+    console.log(props);
     return(
         <div className={classes.AboutPage}>
             <Image src={props.state.image} alt={props.alt} />

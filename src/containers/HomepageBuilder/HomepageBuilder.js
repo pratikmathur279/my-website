@@ -16,7 +16,10 @@ class HomepageBuilder extends Component {
                     {name: "Embr", url: project1, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index:0},
                     {name: "TMS-website", url: project2, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04. It uses the flexiauth library to register and manage users.", heading: "Total Mortgage Services, LLC", isFlipped: false, index:1},
                     {name: "burger", url: project3, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Burger Builder", isFlipped: false, index:2}
-                ]
+                ],
+        description: {
+            description1: "Click on the images to view details"
+        }
         };
         this.handleClick = this.handleClick.bind(this);
       }

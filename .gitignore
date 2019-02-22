@@ -10,6 +10,7 @@
 
 # production
 /build
+/steps.md
 
 # misc
 .DS_Store
