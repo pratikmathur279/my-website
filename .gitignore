@@ -12,6 +12,9 @@
 /build
 /steps.md
 
+# aws
+/awscli-bundle
+
 # misc
 .DS_Store
 .env.local
