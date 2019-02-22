@@ -11,9 +11,7 @@
 # production
 /build
 /steps.md
-
-# aws
-/awscli-bundle
+.awscli-bundle
 
 # misc
 .DS_Store

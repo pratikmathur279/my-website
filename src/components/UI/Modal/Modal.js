@@ -15,6 +15,7 @@ class Modal extends Component {
     }
 
     render () {
+        console.log("Modal");
         return (
             <Auxiliary>
                 <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
