@@ -11,6 +11,9 @@ class HomepageBuilder extends Component {
         super();
         this.state = {
           isFlipped: false,
+          skills: [
+              {name: "React", percentage: 70}, {name : "Angular", percentage: 60}, {name: "Javascript", percentage: 85}, {name: "NodeJS", percentage: 40}, {name: "PHP Laravel", percentage: 70}, {name: "UI Design", percentage: 70}, {name: "HTML5", percentage: 90}, {name: "CSS3", percentage: 70}
+          ],
           projects: 
               [
                     {name: "Embr", url: project1, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index:0},
@@ -46,7 +49,7 @@ class HomepageBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <Homepage projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
+                <Homepage skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
             </Auxiliary>
         );
     }

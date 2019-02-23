@@ -14,6 +14,13 @@
     color: grey;
     opacity: 0.6;
 }
+
+.ProgressBarContainer{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    padding: 25px 0;
+}
 .HomePageContainer {
     width: 100%;
     margin: auto;
