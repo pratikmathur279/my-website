@@ -13,3 +13,5 @@
     height: fit-content;
     
 }
+
+@media (max-width: 500px){}

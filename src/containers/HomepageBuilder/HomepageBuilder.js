@@ -33,6 +33,13 @@ class HomepageBuilder extends Component {
         this.handleClick = this.handleClick.bind(this);
       }
 
+      componentWillMount(){
+          let state = Object.assign({}, this.state);
+          let split = this.createRows(state.hexagons);
+          state.hexagons = split;
+          this.setState(state);
+      }
+
       handleClick(e) {
         // e.preventDefault();
         console.log("clicked "+e.target.id );
@@ -47,12 +54,17 @@ class HomepageBuilder extends Component {
         }
       }
 
-    mouseClickProject(e){
-        console.log(e.target.id);
-        alert('mouse clicked!');
-    }
+      createRows(original){
+        var arr = [];
+        while(original.length > 0){
+            var split = original.splice(0,2);
+            arr.push(split);
+        }
+        return arr;
+      }
 
     render () {
+        console.log(this.state.hexagons);
         return (
             <Auxiliary>
                 <Homepage image={this.state.image} alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />

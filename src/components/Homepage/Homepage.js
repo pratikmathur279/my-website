@@ -14,7 +14,14 @@ const Homepage = (props) => {
                 <HomePageContainer/>
             </div>
             <div className={classes.HexagonsContainer}>
-                <HexagonsContainer hexagons={props.hexagons}/>
+                {props.hexagons.map((row, i)=> {
+                    return(
+                        <HexagonsContainer 
+                        row={i}
+                        hexagons={row}
+                    />
+                    )
+                })}
             </div>
             
             <div className={classes.Container2}>

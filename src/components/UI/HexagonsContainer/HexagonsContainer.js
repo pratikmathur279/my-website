@@ -7,20 +7,38 @@ const HexagonsContainer = (props) => {
  
     const buildRow = (hex) => {
         console.log(hex);
-        return(
-            <div className={classes.AlignHexagon}>
-                <div className={classes.Hexagon}>
-                    <div className={classes.Icons}>
-                        <MaterialIcon icon={hex.name} size={70} />
+        console.log(window.innerWidth);
+        if(window.innerWidth <= '500'){
+            return(
+                <div className={classes.AlignHexagon}>
+                    <div className={classes.Hexagon}>
+                        <div className={classes.Icons}>
+                            <MaterialIcon icon={hex.name} size={40} />
+                        </div>
                         
                     </div>
-                    
+                    <h3>{hex.title}</h3>
+                            <p>{hex.desc}</p>
                 </div>
-                <h3>{hex.title}</h3>
-                        <p>{hex.desc}</p>
-            </div>
-
-        )
+    
+            )
+        }
+        else {
+            return(
+                <div className={classes.AlignHexagon}>
+                    <div className={classes.Hexagon}>
+                        <div className={classes.Icons}>
+                            <MaterialIcon icon={hex.name} size={70} />
+                        </div>
+                        
+                    </div>
+                    <h3>{hex.title}</h3>
+                            <p>{hex.desc}</p>
+                </div>
+    
+            )
+        }
+        
 
     }
     return(
