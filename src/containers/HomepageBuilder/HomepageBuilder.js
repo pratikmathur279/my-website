@@ -5,12 +5,18 @@ import Homepage from '../../components/Homepage/Homepage';
 import project1 from '../../assets/Images/Embr.png';
 import project2 from '../../assets/Images/totalmortgage_website.png';
 import project3 from '../../assets/Images/burger-builder.png';
+import pratik from '../../assets/Images/pratik.jpg';
 
 class HomepageBuilder extends Component {
     constructor() {
         super();
         this.state = {
           isFlipped: false,
+          image: pratik,
+          name: 'Pratik Mathur',
+          hexagons: [
+              {name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
+            ],
           skills: [
               {name: "React", percentage: 70}, {name : "Angular", percentage: 60}, {name: "Javascript", percentage: 85}, {name: "NodeJS", percentage: 40}, {name: "PHP Laravel", percentage: 70}, {name: "UI Design", percentage: 70}, {name: "HTML5", percentage: 90}, {name: "CSS3", percentage: 70}
           ],
@@ -49,7 +55,7 @@ class HomepageBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <Homepage skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
+                <Homepage image={this.state.image} alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
             </Auxiliary>
         );
     }

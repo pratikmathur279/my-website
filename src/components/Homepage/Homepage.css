@@ -15,8 +15,23 @@
     opacity: 0.6;
 }
 
-.ProgressBarContainer{
-    width: 40%;
+.HexagonsContainer {
+    height: 300px;
+}
+
+.Container2{
+    display: flex;
+    flex-direction: row;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.IntroContainer {
+    width: 50%;
+}
+
+.SkillsContainer{
+    width: 50%;
     display: block;
     margin: 0 auto;
     padding: 25px 0;

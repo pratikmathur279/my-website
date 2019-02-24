@@ -1,0 +1,66 @@
+.HexagonsContainer {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+
+.AlignHexagon {
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.Container{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.Hexagon {
+    position: relative;
+    width: 100px; 
+    height: 70.74px;
+    background-color: #64C7CC;
+    margin: 50px 50px 0 50px;
+  }
+  
+  .Hexagon:before,
+  .Hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+  
+  .Hexagon:before {
+    bottom: 100%;
+    border-bottom: 28.87px solid #64C7CC;
+  }
+  
+  .Hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 28.87px solid #64C7CC;
+  }
+  .Icons {
+      display: block;
+      margin: 0 auto;
+      width: 70%;
+  }
+
+  .AlignHexagon h3 {
+      /* margin: 40px 80px 0 80px; */
+      text-align: center;
+      margin: 0;
+      margin-top: 40px;
+      padding: 0px;
+      width: 200px;
+  }
+  .AlignHexagon p {
+      margin: 10px;
+        padding: 0;
+      font-size: 16px;
+      line-height: 1.3em;
+      width: 200px;
+      text-align: center;
+  }
