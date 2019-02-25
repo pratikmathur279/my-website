@@ -6,7 +6,6 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 const HexagonsContainer = (props) => {
  
     const buildRow = (hex) => {
-        console.log(hex);
         console.log(window.innerWidth);
         if(window.innerWidth <= '500'){
             return(
@@ -28,7 +27,7 @@ const HexagonsContainer = (props) => {
                 <div className={classes.AlignHexagon}>
                     <div className={classes.Hexagon}>
                         <div className={classes.Icons}>
-                            <MaterialIcon icon={hex.name} size={70} />
+                            <MaterialIcon icon={hex.name} size={80} />
                         </div>
                         
                     </div>

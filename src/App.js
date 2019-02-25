@@ -7,7 +7,7 @@ import classes from './App.css';
 
 import HomepageBuilder from './containers/HomepageBuilder/HomepageBuilder';
 import AboutPageBuilder from './containers/AboutPageBuilder/AboutPageBuilder';
-import ContactPageBuilder from './containers/ContactPageBuilder/ContactPageBuilder';
+// import ContactPageBuilder from './containers/ContactPageBuilder/ContactPageBuilder';
 import ProjectsPageBuilder from './containers/ProjectsPageBuilder/ProjectsPageBuilder';
 import Footer from '../src/components/UI/Footer/Footer';
 

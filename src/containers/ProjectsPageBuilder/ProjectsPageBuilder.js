@@ -21,17 +21,16 @@ class ProjectsPageBuilder extends Component {
           isFlipped: false,
           showProject: false,
           selected: {},
-          original: [
-                {name: "Embr", url: project1, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index: 0},
-                {name: "TMS Website", url: project2, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04. It uses the flexiauth library to register and manage users.", heading: "Total Mortgage Services, LLC", isFlipped: false, index: 1},
-                {name: "Burger Application", url: project3, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Burger Builder", isFlipped: false, index: 2},
-                {name: "Chatbot for Microsoft Teams and Slack", url: project4, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Chatbot for Microsoft Teams and Slack", isFlipped: false, index:4}
-            ],
+          original: [],
+          currentImageIndex: 0,
           projects: [
-                {name: "Embr", url: project1, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index:0},
-                {name: "TMS-website", url: project2, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04. It uses the flexiauth library to register and manage users.", heading: "Total Mortgage Services, LLC", isFlipped: false, index:1},
-                {name: "burger", url: project3, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Burger Builder", isFlipped: false, index:2},
-                {name: "Chatbot for Microsoft Teams and Slack", url: project4, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Chatbot for Microsoft Teams and Slack", isFlipped: false, index:4}
+                {name: "Embr", url: project1, description: "Embr is a multi-level marketing portal to manage the company's ticketing requests for the Development and Marketing teams. This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index:0},
+                {name: "TMS-website", url: project2, description: "The TMS Website was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Total Mortgage Services, LLC", isFlipped: false, index:1},
+                {name: "Burger Builder", url: project3, description: "Burger Builder is an application where you can build custom burgers by adding the ingredients dynamically. This project was developed using ReactJS, NodeJS and MongoDB. Makes use of Bootstrap 4 for the front-end design. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Burger Builder", isFlipped: false, index:2},
+                {name: "Chatbot for Microsoft Teams and Slack", url: project4, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Chatbot for Microsoft Teams and Slack", isFlipped: false, index:3},
+                {name: "Backgammon Game", url: project4, description: "This project was developed using NodeJS, Express and Socket.io, where players on the same wireless network can play against each other.", heading: "Backgammon Game", isFlipped: false, index:4},
+                // {name: "Random User Generator", url: project4, description: "Random User Generator was primarily focused on developing a serverless framework using the Serverless framework and AWS. This project was developed using NodeJS, AWS Lambda, AWS API Gateway, AWS DynamoDb and Serverless framework", heading: "Random User Generator", isFlipped: false, index:5},
+                
             ],
             description: {
                 description1: "Click on the images to view details"
@@ -40,10 +39,16 @@ class ProjectsPageBuilder extends Component {
         this.createRows = this.createRows.bind(this);
         this.openModalHandler = this.openModalHandler.bind(this);
         this.closeModalHandler = this.closeModalHandler.bind(this);
+        // this.nextSlide = this.nextSlide.bind(this);
+        // this.previousSlide = this.previousSlide.bind(this);
       }
-
+      
       componentWillMount(){
         let state = Object.assign({}, this.state);  
+        let projects = state.projects;
+        for(var i in projects){
+            state.original.push(projects[i])
+        }
         let split = this.createRows(state.projects);
           state.split = split;
           this.setState(state);
@@ -77,6 +82,29 @@ class ProjectsPageBuilder extends Component {
         return arr;
       }
     
+
+    // previousSlide () {
+    //     const lastIndex = imgUrls.length - 1;
+    //     const { currentImageIndex } = this.state;
+    //     const shouldResetIndex = currentImageIndex === 0;
+    //     const index =  shouldResetIndex ? lastIndex : currentImageIndex - 1;
+    
+    //     this.setState({
+    //       currentImageIndex: index
+    //     });
+    //   }
+    
+    // nextSlide () {
+    //     const lastIndex = imgUrls.length - 1;
+    //     const { currentImageIndex } = this.state;
+    //     const shouldResetIndex = currentImageIndex === lastIndex;
+    //     const index =  shouldResetIndex ? 0 : currentImageIndex + 1;
+    
+    //     this.setState({
+    //       currentImageIndex: index
+    //     });
+    //   }
+
     render () {
         return (
             <Auxiliary>

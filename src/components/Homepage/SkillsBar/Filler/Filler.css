@@ -50,3 +50,9 @@
     width: 20px;
     content: attr(value)"%"; 
 } */
+
+@media (max-width: 500px){
+    .Filler {
+        animation: none;
+    }
+}

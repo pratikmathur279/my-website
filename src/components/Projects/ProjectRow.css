@@ -35,6 +35,7 @@
         margin: 0 auto;
     }
     .ProjectDiv {
-        margin: 20px auto;
+        margin: 5px auto;
+        padding-bottom: 5px;
     }
 }

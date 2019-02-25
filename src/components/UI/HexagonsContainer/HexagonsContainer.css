@@ -10,7 +10,7 @@
 }
 
 .AlignHexagon:nth-child(2){
-    margin-left: 100px;
+    margin-left: 6vw;
 }
 
 .Container{
@@ -21,12 +21,30 @@
 
 .Hexagon {
     position: relative;
-  width: 130px; 
-  height: 75.06px;
-  background-color: #64C7CC;
+    width: 130px; 
+    height: 75.06px;
+    background-color: #64C7CC;
     margin: 50px 50px 0 50px;
+    animation: flipInX 3s;
   }
   
+  @keyframes flipInX {
+    0% {
+       transform: perspective(400px) rotateY(90deg);
+       opacity: 0;
+    }
+    40% {
+       transform: perspective(400px) rotateY(-10deg);
+    }
+    70% {
+       transform: perspective(400px) rotateY(10deg);
+    }
+    100% {
+       transform: perspective(400px) rotateY(0deg);
+       opacity: 1;
+    }
+ } 
+
   .Hexagon:before,
   .Hexagon:after {
     content: "";
@@ -50,7 +68,7 @@
   .Icons {
       display: block;
       margin: 0 auto;
-      width: 50%;
+      width: 62%;
   }
 
   .AlignHexagon h3 {
@@ -70,6 +88,21 @@
       text-align: center;
   }
 
+
+  @media (max-width: 768px){
+    .Hexagon {
+      margin-left: 40px;
+    }
+  
+    .AlignHexagon {
+      margin-left: 0px;
+    }
+    
+    .AlignHexagon:nth-child(2){
+      margin-left: 0;
+    }
+  }
+  
   @media (max-width: 500px){
     .HexagonsContainer {
         height: 100%;
@@ -93,7 +126,7 @@
     .Icons {
         display: block;
         margin: 0 auto;
-        width: 50%;
+        width: 54%;
     }
   
     .AlignHexagon h3 {
@@ -117,6 +150,8 @@
     .Icons {
         margin-left: 20px;
         margin-top: 10px;
+        padding-top: 5px;
+        padding-left: 1px;
     }
     
     .Hexagon {
@@ -125,6 +160,7 @@
         height: 46.19px;
         background-color: #64C7CC;
         margin: 23.09px 50px;
+        animation: none;
       }
       
       .Hexagon:before,
@@ -156,4 +192,6 @@
       .AlignHexagon h3 {
           margin-left: 15px;
       }
+
+
   }

@@ -7,6 +7,8 @@ import project2 from '../../assets/Images/totalmortgage_website.png';
 import project3 from '../../assets/Images/burger-builder.png';
 import pratik from '../../assets/Images/pratik.jpg';
 
+import Carousel1 from '../../components/UI/Carousel/Carousel';
+
 class HomepageBuilder extends Component {
     constructor() {
         super();
@@ -18,7 +20,7 @@ class HomepageBuilder extends Component {
               {name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
             ],
           skills: [
-              {name: "React", percentage: 70}, {name : "Angular", percentage: 60}, {name: "Javascript", percentage: 85}, {name: "NodeJS", percentage: 40}, {name: "PHP Laravel", percentage: 70}, {name: "UI Design", percentage: 70}, {name: "HTML5", percentage: 90}, {name: "CSS3", percentage: 70}
+              {name: "React", percentage: 70}, {name : "Angular", percentage: 60}, {name: "Javascript", percentage: 85}, {name: "NodeJS", percentage: 40}, {name: "PHP Laravel", percentage: 60}, {name: "UI Design", percentage: 70}, {name: "HTML5", percentage: 90}, {name: "CSS3", percentage: 70}
           ],
           projects: 
               [

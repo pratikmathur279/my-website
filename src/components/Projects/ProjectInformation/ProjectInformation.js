@@ -8,6 +8,7 @@ const ProjectInformation = ( props ) => (
             alt={props.card.name}></img>
         <div className={classes.projectBody}>
             <h2>{props.card.name}</h2>
+            <p>{props.card.description}</p>
         </div>
         
     </div>

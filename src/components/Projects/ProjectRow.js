@@ -5,7 +5,6 @@ import classes from './ProjectRow.css';
 const ProjectRow = (props) => {
     
     const buildRow = (card) => {
-        let className = "project";
         // console.log(card);
         return (
             <div key={card.index} className={classes.project} >

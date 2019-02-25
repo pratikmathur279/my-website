@@ -16,8 +16,8 @@
 }
 
 .HexagonsContainer {
-    height: 50%;
-    margin-left: 120px;
+    /* height: 75%; */
+    margin-left: 5vw;
     display: flex;
     flex-direction: row;
 }
@@ -56,6 +56,12 @@
     /* background-repeat: no-repeat; */
     background-color: teal;
 }
+/* 
+@media (max-width: 768px){
+    .HexagonsContainer {
+        margin-left: 0;
+    }
+} */
 
 @media screen and (max-width: 500px){
     .HomePageContainer {
