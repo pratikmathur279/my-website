@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense, lazy} from 'react';
 
 import classes from './Homepage.css';
 import HomePageContainer from '../Homepage/HomepageContainer/HomepageContainer';

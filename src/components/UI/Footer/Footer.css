@@ -5,19 +5,19 @@
     position: relative;
     padding: 0px;
     margin-top: 0;
-    height: 85px;
+    height: 120px;
     overflow: none;
     text-align: center;
+    font-family: Roboto;
     align-items: center;
 }
 
 .FooterDiv{
     display: block;
     margin: 0 auto;
-    /* margin: auto; */
     width: fit-content;
-    text-align: center;
-    align-items: center;
+    /* text-align: center; */
+    /* align-items: center; */
 }
 
 .FooterContainer{
@@ -25,4 +25,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     /* height: 300px; */
+}
+
+.FooterDiv span {
+    margin-left: 5px;
 }

@@ -7,8 +7,6 @@ import project2 from '../../assets/Images/totalmortgage_website.png';
 import project3 from '../../assets/Images/burger-builder.png';
 import pratik from '../../assets/Images/pratik.jpg';
 
-import Carousel1 from '../../components/UI/Carousel/Carousel';
-
 class HomepageBuilder extends Component {
     constructor() {
         super();

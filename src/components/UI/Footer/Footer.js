@@ -17,6 +17,10 @@ const footer = (props) => (
                 <FooterImage src={instagram} alt="Instagram" url="https://www.instagram.com/pratikmathur279/" target="_blank" />
                 <FooterImage src={mail} alt="E-Mail" url="mailto:pratikmathur279@gmail.com" />
             </div>
+            
+        </div>
+        <div className={classes.FooterDiv}>
+            <p>©2019 Pratik Mathur. All rights reserved.</p>
         </div>
     </div>
 );
