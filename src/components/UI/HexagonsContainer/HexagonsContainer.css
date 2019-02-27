@@ -140,10 +140,10 @@
     }
     .AlignHexagon p {
         margin: 10px;
-          padding: 0;
+        padding-left: 10px;
         font-size: 14px;
         line-height: 1.3em;
-        width: 138px;
+        width: 150px;
         text-align: center;
     }
 

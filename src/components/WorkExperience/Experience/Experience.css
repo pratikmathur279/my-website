@@ -1,5 +1,6 @@
 .Experience {
     margin-bottom: 30px;
+    border-bottom: 1px solid grey;
 }
 
 .Experience h3 {
@@ -30,4 +31,14 @@
 
 .Experience span {
     font-weight: bold;
+}
+
+@media (max-width: 500px){
+    .container h4{
+        width: 75%;
+    }
+
+    .container p {
+        width: 25%;
+    }
 }
