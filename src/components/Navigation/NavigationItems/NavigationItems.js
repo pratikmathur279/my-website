@@ -11,7 +11,7 @@ const navigationItems = () => {
         <NavigationItem to="/about">About</NavigationItem>
         <NavigationItem to="/experience">Work Experience</NavigationItem>
         <NavigationItem to="/projects">Projects</NavigationItem>
-        {/* <NavigationItem to="/contact">Contact</NavigationItem> */}        
+        <NavigationItem to="/contact">Contact</NavigationItem>        
     </ul>
     )
 }
