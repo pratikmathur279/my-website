@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import Homepage from '../../components/Homepage/Homepage';
-import project1 from '../../assets/Images/Embr.png';
-import project2 from '../../assets/Images/totalmortgage_website.png';
-import project3 from '../../assets/Images/burger-builder.png';
 import pratik from '../../assets/Images/pratik.jpg';
+
+import Actions from '../../actions/Actions';
 
 class HomepageBuilder extends Component {
     constructor() {
@@ -16,13 +14,14 @@ class HomepageBuilder extends Component {
           image: pratik,
           name: 'Pratik Mathur',
           hexagons: [
-              {name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
+              {id:0, name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {id:1, name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {id:2, name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {id:3, name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
             ],
           skills: [],
         description: {
             description1: "Click on the images to view details"
         }
         };
+        this.actions = new Actions();
         this.handleClick = this.handleClick.bind(this);
       }
 
@@ -30,28 +29,12 @@ class HomepageBuilder extends Component {
           let state = Object.assign({}, this.state);
           let split = this.createRows(state.hexagons);
           state.hexagons = split;
-          axios('/skills')
-          .then((res)=>{
-              var data = (res.data);
-              console.log(data);
-              state.skills = data;
-              this.setState(state);
-          })
-
-          this.setState(state);
+          var temp = this.actions.getSkills(state.skills, (data)=> {
+            state.skills = data;
+            this.setState(state);
+          });
+            
       }
-
-    //   componentDidMount(){
-    //     let state = Object.assign({}, this.state);
-    //     axios('/skills')
-    //       .then((res)=>{
-    //           var data = (res.data);
-    //           console.log(data);
-    //           state.skills = data;
-    //           this.setState(state);
-    //       })
-
-    //   }
 
       handleClick(e) {
         // e.preventDefault();
@@ -77,7 +60,6 @@ class HomepageBuilder extends Component {
       }
 
     render () {
-        console.log(this.state.hexagons);
         return (
             <Auxiliary>
                 <Homepage image={this.state.image} alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />

@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from 'react';
+import React from 'react';
 
 import classes from './Homepage.css';
 import HomePageContainer from '../Homepage/HomepageContainer/HomepageContainer';
@@ -16,7 +16,7 @@ const Homepage = (props) => {
             <div className={classes.HexagonsContainer}>
                 {props.hexagons.map((row, i)=> {
                     return(
-                        <HexagonsContainer 
+                        <HexagonsContainer key={row.id}
                         row={i}
                         hexagons={row}
                     />

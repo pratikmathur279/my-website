@@ -6,7 +6,7 @@ import Filler from './Filler/Filler';
 const SkillsBar = (props) => {
 
     const buildSkillsBar = (skill) => (
-        <div className={classes.SkillsBar}>
+        <div key={skill.id} className={classes.SkillsBar}>
             <Filler skill={skill} />
         </div>
     )
