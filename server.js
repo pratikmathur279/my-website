@@ -1,16 +1,7 @@
-//EXPRESS SERVER
-const express = require('express');
-var app = express();
-const port = 3001;
-
-var request = require('request');
-
-app.listen(port, () => {
-    console.log(`Server started`);
-});
-
-app.post('/api', (req, res) => {
-    console.log(res);
-});
-
-//EXPRESS SERVER END
+const express = require('express')
+const sls = require('serverless-http')
+const app = express()
+app.get('/', async (req, res, next) => {
+  res.status(200).send('Hello World!')
+})
+module.exports.server = sls(app)

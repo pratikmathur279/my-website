@@ -1,0 +1,160 @@
+service: my-website
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    EXPERIENCE_TABLE: { "Ref": "ExperiencesDynamoDbTable" } 
+    PROJECTS_TABLE: { "Ref": "ProjectsDynamoDbTable" } 
+    SKILLS_TABLE: { "Ref": "SkillsDynamoDbTable" }
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 
+        - { "Fn::GetAtt": ["ExperiencesDynamoDbTable", "Arn"] }
+        - { "Fn::GetAtt": ["ProjectsDynamoDbTable", "Arn"] }
+        - { "Fn::GetAtt": ["SkillsDynamoDbTable", "Arn"] }
+
+functions:
+# create experience
+  createExperience:
+    handler: experiences/create.create
+    events:
+      - http:
+          path: experience
+          method: post
+          cors: true
+
+# list experience
+  listExperience:
+    handler: experiences/list.list
+    events:
+      - http:
+          path: experience
+          method: get
+          cors: true
+
+# get experience
+  getExperience:
+    handler: experiences/get.get
+    events:
+      - http:
+          path: experience/{id}
+          method: get
+          cors: true
+
+# create projects
+  createProjects:
+    handler: projects/create.create
+    events:
+      - http:
+          path: projects
+          method: post
+          cors: true
+# list projects
+  listProjects:
+    handler: projects/list.list
+    events:
+      - http:
+          path: projects
+          method: get
+          cors: true
+
+# get projects
+  getProjects:
+    handler: projects/get.get
+    events:
+      - http:
+          path: projects/{id}
+          method: get
+          cors: true
+ 
+ # create skills 
+  createSkills:
+    handler: skills/create.create
+    events:
+      - http:
+          path: skills
+          method: post
+          cors: true
+
+# list skills
+  listSkills:
+    handler: skills/list.list
+    events:
+      - http:
+          path: skills
+          method: get
+          cors: true
+
+# get skills
+  getSkills:
+    handler: skills/get.get
+    events:
+      - http:
+          path: skills/{id}
+          method: get
+          cors: true
+
+
+resources:
+  Resources:
+    ExperiencesDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-experiences
+
+    ProjectsDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-projects
+
+    SkillsDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-skills

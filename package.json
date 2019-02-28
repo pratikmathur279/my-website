@@ -1,11 +1,26 @@
 {
-  "name": "react-complete-guide",
+  "name": "serverless-nodejs-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/experience": {
+      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "changeOrigin": true
+    },
+    "/projects": {
+      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "changeOrigin": true
+    },
+    "/skills": {
+      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "changeOrigin": true
+    }
+  },
   "dependencies": {
     "@aws-amplify/cli": "^1.1.2",
     "@mdi/font": "^3.5.94",
     "autoprefixer": "7.1.2",
+    "axios": "^0.18.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -54,6 +69,7 @@
     "react-router-dom": "^4.3.1",
     "semantic-ui-react": "^0.85.0",
     "serve": "^10.1.2",
+    "serverless-http": "^1.9.1",
     "sshpk": "^1.16.1",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",

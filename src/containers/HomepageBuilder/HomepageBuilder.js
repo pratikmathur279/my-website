@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import Homepage from '../../components/Homepage/Homepage';
@@ -17,15 +18,7 @@ class HomepageBuilder extends Component {
           hexagons: [
               {name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
             ],
-          skills: [
-              {name: "React", percentage: 70}, {name : "Angular", percentage: 60}, {name: "Javascript", percentage: 85}, {name: "NodeJS", percentage: 40}, {name: "PHP Laravel", percentage: 60}, {name: "UI Design", percentage: 70}, {name: "HTML5", percentage: 90}, {name: "CSS3", percentage: 70}
-          ],
-          projects: 
-              [
-                    {name: "Embr", url: project1, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04.", heading: "Embr - Marketing Portal", isFlipped: false, index:0},
-                    {name: "TMS-website", url: project2, description: "This project was developed using ReactJS, PHP Laravel framework and hosted on Ubuntu 16.04. It uses the flexiauth library to register and manage users.", heading: "Total Mortgage Services, LLC", isFlipped: false, index:1},
-                    {name: "burger", url: project3, description: "This project was developed using ReactJS, NodeJS and MongoDB database. It was hosted using the AWS Lambda, AWS API Gateway and Serverless framework.", heading: "Burger Builder", isFlipped: false, index:2}
-                ],
+          skills: [],
         description: {
             description1: "Click on the images to view details"
         }
@@ -37,8 +30,28 @@ class HomepageBuilder extends Component {
           let state = Object.assign({}, this.state);
           let split = this.createRows(state.hexagons);
           state.hexagons = split;
+          axios('/skills')
+          .then((res)=>{
+              var data = (res.data);
+              console.log(data);
+              state.skills = data;
+              this.setState(state);
+          })
+
           this.setState(state);
       }
+
+    //   componentDidMount(){
+    //     let state = Object.assign({}, this.state);
+    //     axios('/skills')
+    //       .then((res)=>{
+    //           var data = (res.data);
+    //           console.log(data);
+    //           state.skills = data;
+    //           this.setState(state);
+    //       })
+
+    //   }
 
       handleClick(e) {
         // e.preventDefault();
