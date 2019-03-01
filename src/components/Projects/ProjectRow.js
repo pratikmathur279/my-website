@@ -5,10 +5,10 @@ import classes from './ProjectRow.css';
 const ProjectRow = (props) => {
     
     const buildRow = (card) => {
-        // console.log(card);
+        console.log(card);
         return (
             <div key={card.index} className={classes.project} >
-                <Project key={card.index} src={card.url} id={card.index}openModalHandler={props.openModalHandler}/>
+                <Project key={card.index} src={card.url} id={card.index} openModalHandler={props.openModalHandler}/>
             </div>
         );
     }

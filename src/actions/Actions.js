@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class Actions {
     getSkills(skills, callback){
-        axios('/skills')
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/skills')
           .then((res)=>{
               var data = (res.data);
               console.log(data);
@@ -12,7 +12,7 @@ class Actions {
     }
 
     getExperience(experience, callback){
-        axios('/experience')
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/experience')
         .then((res) => {
             var data = res.data;
             console.log(data);
@@ -24,9 +24,17 @@ class Actions {
                 if(i == data.length-1){
                     callback(data);
                 }
-            }
-            
-            
+            }           
+        })
+    }
+
+    getProjects(experience, callback){
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/projects')
+        .then((res) => {
+            var data = res.data;
+            console.log(data);
+            data.sort((a, b) => (a.index > b.index) ? 1 : -1);
+            callback(data);
         })
     }
 }
