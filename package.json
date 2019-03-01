@@ -20,6 +20,8 @@
     "@aws-amplify/cli": "^1.1.2",
     "@mdi/font": "^3.5.94",
     "autoprefixer": "7.1.2",
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-react": "^2.3.0",
     "axios": "^0.18.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
@@ -83,7 +85,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
-  },
+},
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
