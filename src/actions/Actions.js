@@ -3,7 +3,9 @@ import axios from 'axios';
 
 class Actions {
     getSkills(skills, callback){
-        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/skills')
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/skills',{
+              crossDomain: true
+        })
           .then((res)=>{
               var data = (res.data);
               console.log(data);
@@ -12,7 +14,9 @@ class Actions {
     }
 
     getExperience(experience, callback){
-        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/experience')
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/experience', {
+            crossDomain: true
+        })
         .then((res) => {
             var data = res.data;
             console.log(data);
@@ -29,7 +33,9 @@ class Actions {
     }
 
     getProjects(experience, callback){
-        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/projects')
+        axios('https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev/projects', {
+            crossDomain: true
+        })
         .then((res) => {
             var data = res.data;
             console.log(data);

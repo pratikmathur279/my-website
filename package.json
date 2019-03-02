@@ -4,15 +4,15 @@
   "private": true,
   "proxy": {
     "/experience": {
-      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "target": "http://data.pratikmathur.com",
       "changeOrigin": true
     },
     "/projects": {
-      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "target": "http://data.pratikmathur.com",
       "changeOrigin": true
     },
     "/skills": {
-      "target": "https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev",
+      "target": "http://data.pratikmathur.com",
       "changeOrigin": true
     }
   },

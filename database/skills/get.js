@@ -28,6 +28,10 @@ module.exports.get = (event, context, callback) => {
     // create a response
     const response = {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': 'https://pazqa0glua.execute-api.us-east-1.amazonaws.com/dev',
+      'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(result.Item),
     };
     callback(null, response);

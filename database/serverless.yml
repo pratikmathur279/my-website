@@ -2,6 +2,17 @@ service: my-website
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: data.pratikmathur.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
 provider:
   name: aws
   runtime: nodejs8.10
