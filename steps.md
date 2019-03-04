@@ -8,3 +8,8 @@ aws s3 cp /Users/pratik/Documents/my-website/build s3://www.pratikmathur.com/ --
 
 aws s3 sync /Users/pratik/Documents/my-website/build s3://pratikmathur.com/ --recursive
 aws s3 sync /Users/pratik/Documents/my-website/build s3://www.pratikmathur.com/
+
+
+
+to fix cors,
+enable from serverless framework

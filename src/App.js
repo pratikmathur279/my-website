@@ -7,7 +7,7 @@ import classes from './App.css';
 
 import HomepageBuilder from './containers/HomepageBuilder/HomepageBuilder';
 import AboutPageBuilder from './containers/AboutPageBuilder/AboutPageBuilder';
-// import ContactPageBuilder from './containers/ContactPageBuilder/ContactPageBuilder';
+import ContactPageBuilder from './containers/ContactPageBuilder/ContactPageBuilder';
 import ProjectsPageBuilder from './containers/ProjectsPageBuilder/ProjectsPageBuilder';
 import WorkExperienceBuilder from './containers/WorkExperienceBuilder/WorkExperienceBuilder.js';
 import Footer from '../src/components/UI/Footer/Footer';
@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/about" component={AboutPageBuilder}/>
             <Route path="/experience" component={WorkExperienceBuilder} />
             <Route path="/projects" component={ProjectsPageBuilder}/>
-            {/* <Route path="/contact" component={ContactPageBuilder}/> */}
+            <Route path="/contact" component={ContactPageBuilder}/>
         </div>
 
         <Footer />
