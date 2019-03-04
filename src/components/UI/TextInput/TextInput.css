@@ -12,13 +12,14 @@
 
 .Label {
     text-transform: capitalize;
-    width: 80px;
+    width: 120px;
 }
 
 input{
     width: 60vw;
     padding: 2px 10px;
     height: 30px;
+    margin-left: 15px;
     font-size: 14px;
     letter-spacing: 1px;
     border: none;
