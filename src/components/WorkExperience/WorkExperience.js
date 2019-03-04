@@ -17,7 +17,7 @@ const WorkExperience = (props) => {
     return (
         <div className={classes.WorkExperience}>
             <div className={classes.Header}>
-                <h1>Work Experience</h1>
+                <h1>Professional Experience</h1>
             </div>
             <div className={classes.WorkExperienceRow}>
                 {props.experience.map(buildRow)}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import ContactPageContainer from '../../components/Contact/ContactPageContainer';
+import Actions from '../../actions/Actions';
 
 class ContactPageBuilder extends Component {
     constructor(props){
@@ -28,6 +29,7 @@ class ContactPageBuilder extends Component {
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
         this.valid = this.valid.bind(this);
+        this.actions = new Actions();
     }
 
     onClick() {
@@ -40,7 +42,13 @@ class ContactPageBuilder extends Component {
                 message: state.formControls.message.value
             }
             console.log(emailObject);
-            window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);
+            var temp = this.actions.sendContact(emailObject, (data)=> {
+                if(data){
+                    console.log("Data saved!!!");
+                    window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);
+    
+                }
+            });
         }
         else{
             console.log("Error");

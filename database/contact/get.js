@@ -3,20 +3,24 @@
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
-const params = {
-  TableName: process.env.PROJECTS_TABLE,
-};
 
-module.exports.list = (event, context, callback) => {
-  // fetch all todos from the database
-  dynamoDb.scan(params, (error, result) => {
+module.exports.get = (event, context, callback) => {
+  const params = {
+    TableName: process.env.CONTACT_TABLE,
+    Key: {
+      id: event.pathParameters.id,
+    },
+  };
+
+  // fetch todo from the database
+  dynamoDb.get(params, (error, result) => {
     // handle potential errors
     if (error) {
       console.error(error);
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the todos.',
+        body: 'Couldn\'t fetch the contacts item.',
       });
       return;
     }
@@ -28,7 +32,7 @@ module.exports.list = (event, context, callback) => {
         'Access-Control-Allow-Origin': 'http://pratikmathur.com',
       'Access-Control-Allow-Credentials': true,
       },
-      body: JSON.stringify(result.Items),
+      body: JSON.stringify(result.Item),
     };
     callback(null, response);
   });

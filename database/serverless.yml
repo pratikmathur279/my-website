@@ -20,6 +20,7 @@ provider:
     EXPERIENCE_TABLE: { "Ref": "ExperiencesDynamoDbTable" } 
     PROJECTS_TABLE: { "Ref": "ProjectsDynamoDbTable" } 
     SKILLS_TABLE: { "Ref": "SkillsDynamoDbTable" }
+    CONTACT_TABLE: { "Ref": "ContactDynamoTable" }
 
   iamRoleStatements:
     - Effect: Allow
@@ -34,8 +35,36 @@ provider:
         - { "Fn::GetAtt": ["ExperiencesDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["ProjectsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["SkillsDynamoDbTable", "Arn"] }
+        - { "Fn::GetAtt": ["ContactDynamoTable", "Arn"] }
 
 functions:
+# create contact
+  createContact:
+    handler: contact/create.create
+    events:
+      - http:
+          path: contact
+          method: post
+          cors: true
+
+# list contact
+  listContact:
+    handler: contact/list.list
+    events:
+      - http:
+          path: contact
+          method: get
+          cors: true
+
+# get contact
+  getContact:
+    handler: contact/get.get
+    events:
+      - http:
+          path: contact/{id}
+          method: get
+          cors: true
+
 # create experience
   createExperience:
     handler: experiences/create.create
@@ -135,6 +164,23 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:service}-experiences
+
+    ContactDynamoTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-contacts
 
     ProjectsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
