@@ -7,7 +7,6 @@ import classes from './ProjectsPageBuilder.css';
 
 import Modal from '../../components/UI/Modal/Modal';
 
-import ProjectRow from '../../components/Projects/ProjectRow';
 import Actions from '../../actions/Actions';
 
 class ProjectsPageBuilder extends Component {
@@ -35,7 +34,7 @@ class ProjectsPageBuilder extends Component {
       
       componentWillMount(){
         let state = Object.assign({}, this.state);  
-        var temp = this.actions.getProjects(state.projects, (data)=> {
+        this.actions.getProjects(state.projects, (data)=> {
             state.projects = data;
             let projects = state.projects;
             for(var i in projects){

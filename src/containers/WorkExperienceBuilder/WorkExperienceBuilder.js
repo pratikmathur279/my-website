@@ -18,7 +18,7 @@ class WorkExperienceBuilder extends Component {
       componentWillMount(){
         let state = Object.assign({}, this.state);
         
-        var temp = this.actions.getExperience(state.experience, (data)=> {
+        this.actions.getExperience(state.experience, (data)=> {
           state.experience = data;
           this.setState(state);
         });   

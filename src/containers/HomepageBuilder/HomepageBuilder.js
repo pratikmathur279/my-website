@@ -29,7 +29,7 @@ class HomepageBuilder extends Component {
           let state = Object.assign({}, this.state);
           let split = this.createRows(state.hexagons);
           state.hexagons = split;
-          var temp = this.actions.getSkills(state.skills, (data)=> {
+          this.actions.getSkills(state.skills, (data)=> {
             state.skills = data;
             this.setState(state);
           });

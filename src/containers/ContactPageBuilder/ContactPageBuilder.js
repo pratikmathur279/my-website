@@ -42,7 +42,7 @@ class ContactPageBuilder extends Component {
                 message: state.formControls.message.value
             }
             console.log(emailObject);
-            var temp = this.actions.sendContact(emailObject, (data)=> {
+            this.actions.sendContact(emailObject, (data)=> {
                 if(data){
                     console.log("Data saved!!!");
                     window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);

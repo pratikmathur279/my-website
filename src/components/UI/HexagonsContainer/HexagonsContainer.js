@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './HexagonsContainer.css';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 
 const HexagonsContainer = (props) => {
  
