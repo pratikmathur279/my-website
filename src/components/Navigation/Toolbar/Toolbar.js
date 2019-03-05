@@ -12,7 +12,7 @@ const toolbar = ( props ) => (
             <NavigationItems />
         </nav>
         <div>
-            <AboutWebsite />
+            <AboutWebsite aboutToggleClicked={props.aboutToggleClicked} />
         </div>
     </header>
 );

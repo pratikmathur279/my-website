@@ -4,10 +4,23 @@ import Auxiliary from '../Auxiliary';
 import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import AboutDrawer from '../../components/UI/AboutDrawer/AboutDrawer';
 
 class Layout extends Component {
     state = {
-        showSideDrawer: false
+        showSideDrawer: false,
+        showAboutDrawer: false
+    }
+
+    aboutDrawerClosedHandler = () => {
+        this.setState({ showAboutDrawer: false });
+    }
+
+    aboutDrawerToggleHandler = () => {
+        // alert("aboutDrawerToggle");
+        this.setState( (prevState) => {
+            return {showAboutDrawer: !prevState.showAboutDrawer}
+        });
     }
 
     sideDrawerClosedHandler = () => {
@@ -23,7 +36,10 @@ class Layout extends Component {
     render () {
         return (
             <Auxiliary>
-                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
+                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} aboutToggleClicked={this.aboutDrawerToggleHandler} />
+                <AboutDrawer 
+                    open={this.state.showAboutDrawer} 
+                    closed={this.aboutDrawerClosedHandler}/>
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler} />

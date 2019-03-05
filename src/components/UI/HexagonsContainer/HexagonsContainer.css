@@ -119,9 +119,9 @@
     .Container{
         display: block;
         margin: 0 auto;
-        margin-left: 40px;
-        width: 80%;
-        margin-left: 20px;
+        /* margin-left: 40px; */
+        width: inherit;
+        /* padding: 5px; */
     }
     .Icons {
         display: block;
@@ -192,6 +192,4 @@
       .AlignHexagon h3 {
           margin-left: 15px;
       }
-
-
   }
