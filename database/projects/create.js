@@ -16,6 +16,8 @@ module.exports.create = (event, context, callback) => {
       name: data.name,
       url: data.url,
       description: data.description,
+      github: data.github,
+      live_instance: data.live_instance,
       heading: data.heading,
       index: data.index,
       checked: false,

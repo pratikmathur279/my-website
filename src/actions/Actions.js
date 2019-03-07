@@ -38,6 +38,7 @@ class Actions {
                 data[i].responsibilities = temp;
                 // console.log(data.length);
                 if(i == data.length-1){
+                    data.sort((a, b) => (a.index > b.index) ? 1 : -1);
                     callback(data);
                 }
             }           

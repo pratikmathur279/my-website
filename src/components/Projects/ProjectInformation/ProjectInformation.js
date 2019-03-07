@@ -39,6 +39,9 @@ const ProjectInformation = ( props ) => {
         <div className={classes.projectBody}>
             <h2>{props.card.name}</h2>
             <p>{props.card.description}</p>
+
+            {props.card.live_instance ? <p><a href={props.card.live_instance} target="_blank">Click here</a> to play the game!</p>: ""}
+            
         </div>
         
     </div>

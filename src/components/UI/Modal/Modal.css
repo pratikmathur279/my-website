@@ -17,7 +17,7 @@
     .Modal {
         width: 50%;
         left: calc(45% - 250px);
-        height: 85%;
+        height: fit-content;
         top: 0%;
     }
 }
