@@ -2,20 +2,6 @@
   "name": "serverless-nodejs-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/experience": {
-      "target": "http://data.pratikmathur.com",
-      "changeOrigin": true
-    },
-    "/projects": {
-      "target": "http://data.pratikmathur.com",
-      "changeOrigin": true
-    },
-    "/skills": {
-      "target": "http://data.pratikmathur.com",
-      "changeOrigin": true
-    }
-  },
   "dependencies": {
     "@aws-amplify/cli": "^1.1.2",
     "@mdi/font": "^3.5.94",

@@ -6,7 +6,8 @@ import totalmortgage from '../../../assets/Images/totalmortgage_website.png';
 import burger from '../../../assets/Images/burger-builder.png';
 import teams_chatbot from '../../../assets/Images/teams-chatbot.png';
 import backgammon from '../../../assets/Images/backgammon.png';
-
+import random_user from '../../../assets/Images/random-user.png';
+import notfound from '../../../assets/Images/not_found.png';
 
 const ProjectInformation = ( props ) => {
 
@@ -25,8 +26,14 @@ const ProjectInformation = ( props ) => {
         else if(url.includes('chatbot')){
             url = teams_chatbot;
         }
-        else {
+        else if(url.includes('backgammon')){
             url = backgammon;
+        }
+        else if(url.includes('random')){
+            url = random_user;
+        }
+        else {
+            url = notfound;
         }
 
     }

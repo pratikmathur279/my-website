@@ -18,7 +18,6 @@ class AboutPageBuilder extends Component {
             }
         };    
     }
-    
     render () {
         return (
             <Auxiliary>
