@@ -9,6 +9,7 @@ const ContactForm = (props) => {
     return(
         <div className={classes.ContactForm}>
             <h3>Have a question or want to work together? Fill in the form below and I'll get back to you as soon as possible.</h3>
+            {props.emailSent ? <p className={classes.EmailSent}>Email sent!</p>: ""}
             <div className={classes.Form}>
                 <form>
                     <TextInput errors={props.errors} onChange={props.onChange} id="name" name="name" value={props.formControls.name.value} />

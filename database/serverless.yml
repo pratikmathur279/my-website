@@ -21,6 +21,7 @@ provider:
     PROJECTS_TABLE: { "Ref": "ProjectsDynamoDbTable" } 
     SKILLS_TABLE: { "Ref": "SkillsDynamoDbTable" }
     CONTACT_TABLE: { "Ref": "ContactDynamoTable" }
+    EMAIL: "pratikmathur279@gmail.com"
 
   iamRoleStatements:
     - Effect: Allow
@@ -36,8 +37,21 @@ provider:
         - { "Fn::GetAtt": ["ProjectsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["SkillsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["ContactDynamoTable", "Arn"] }
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
 
 functions:
+#send email
+  send:
+      handler: email/send.send
+      events:
+        - http:
+            path: email/send
+            method: post
+            cors: true
+
 # create contact
   createContact:
     handler: contact/create.create

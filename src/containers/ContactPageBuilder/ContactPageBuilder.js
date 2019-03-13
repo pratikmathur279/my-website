@@ -23,13 +23,33 @@ class ContactPageBuilder extends Component {
                   value: ''
                 }
             },
-            errors: {}
+            initialState: {
+                email: {
+                    value: ''
+                  },
+                  name: {
+                    value: ''
+                  },
+                  subject: {
+                      value: ''
+                  },
+                  message: {
+                    value: ''
+                  }
+            },
+            errors: {},
+            emailSent: false
         }
 
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
         this.valid = this.valid.bind(this);
         this.actions = new Actions();
+    }
+
+    componentDidMount(){
+        let state = Object.assign({}, this.state);
+        this.setState(state);
     }
 
     onClick() {
@@ -41,14 +61,20 @@ class ContactPageBuilder extends Component {
                 subject: state.formControls.subject.value,
                 message: state.formControls.message.value
             }
-            console.log(emailObject);
-            this.actions.sendContact(emailObject, (data)=> {
-                if(data){
-                    console.log("Data saved!!!");
-                    window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);
-    
+            this.actions.sendEmail(emailObject, (sent)=>{
+                if(sent){
+                    this.actions.sendContact(emailObject, (data)=> {
+                        if(data){
+                            // window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);
+                            state.formControls = state.initialState;
+                            state.emailSent = true;
+                            this.setState(state);
+                        }
+                    });
                 }
             });
+
+            
         }
         else{
             console.log("Error");
@@ -96,7 +122,7 @@ class ContactPageBuilder extends Component {
         return (
             <Auxiliary>
                 <div>
-                    <ContactPageContainer errors={this.state.errors} formControls={this.state.formControls} onChange={this.onChange} onClick={this.onClick} />
+                    <ContactPageContainer emailSent={this.state.emailSent} errors={this.state.errors} formControls={this.state.formControls} onChange={this.onChange} onClick={this.onClick} />
                 </div>
             </Auxiliary>
         );

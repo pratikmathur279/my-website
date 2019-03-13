@@ -7,7 +7,8 @@ const ContactPageContainer = (props) => {
 
     return(
         <div className={classes.ContactPageContainer}>
-            <ContactForm errors={props.errors} formControls={props.formControls} onChange={props.onChange} onClick={props.onClick} />
+
+            <ContactForm emailSent={props.emailSent} errors={props.errors} formControls={props.formControls} onChange={props.onChange} onClick={props.onClick} />
         </div>
     )
 }
