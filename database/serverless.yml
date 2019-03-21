@@ -37,6 +37,7 @@ provider:
         - { "Fn::GetAtt": ["ProjectsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["SkillsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["ContactDynamoTable", "Arn"] }
+
     - Effect: "Allow"
       Action:
         - "ses:SendEmail"
@@ -158,7 +159,33 @@ functions:
           path: skills/{id}
           method: get
           cors: true
+    
+#add multiple skills
+  addSkills:
+    handler: skills/addSkills.addSkills
+    events:
+      - http:
+          path: addskills
+          method: post
+          cors: true
 
+#add multiple experiences
+  addExperiences:
+    handler: experiences/addExperiences.addExperiences
+    events:
+      - http:
+          path: addexperiences
+          method: post
+          cors: true
+
+#add multiple projects
+  addProjects:
+    handler: projects/addProjects.addProjects
+    events:
+      - http:
+          path: addprojects
+          method: post
+          cors: true
 
 resources:
   Resources:
@@ -177,7 +204,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:service}-experiences
+        TableName: ${self:service}-experiences-data
 
     ContactDynamoTable:
       Type: 'AWS::DynamoDB::Table'
@@ -194,7 +221,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:service}-contacts
+        TableName: ${self:service}-contacts-data
 
     ProjectsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
@@ -211,7 +238,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:service}-projects
+        TableName: ${self:service}-projects-data
 
     SkillsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
@@ -228,4 +255,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:service}-skills
+        TableName: ${self:service}-skills-data

@@ -8,24 +8,13 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
-  // if (typeof data.text !== 'string') {
-  //   console.error('Validation Failed');
-  //   callback(null, {
-  //     statusCode: 400,
-  //     headers: { 'Content-Type': 'text/plain' },
-  //     body: 'Couldn\'t create the todo item.',
-  //   });
-  //   return;
-  // }
 
   const params = {
-    TableName: process.env.SKILLS_TABLE,
+    TableName: process.env.BACKGAMMON_USERS_TABLE,
     Item: {
       id: uuid.v1(),
       name: data.name,
-      percentage: data.percentage,
-      checked: false,
-      index: data.index,
+      email: data.email,
       createdAt: timestamp,
       updatedAt: timestamp,
     },
@@ -39,7 +28,7 @@ module.exports.create = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t create the todo item.',
+        body: 'Couldn\'t create the contact item.',
       });
       return;
     }
