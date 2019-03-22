@@ -15,6 +15,7 @@ class ProjectsPageBuilder extends Component {
         this.state = {
           isFlipped: false,
           showProject: false,
+          loading: true,
           selected: {},
           original: [],
           split: [],
@@ -42,6 +43,7 @@ class ProjectsPageBuilder extends Component {
             }
             let split = this.createRows(state.projects);
               state.split = split;
+              state.loading = false;
               this.setState(state);
           });
       }
@@ -83,6 +85,7 @@ class ProjectsPageBuilder extends Component {
                 </Modal>
 
                 <Projects 
+                    loading={this.state.loading}
                     split={this.state.split} 
                     openModalHandler={this.openModalHandler} 
                 />

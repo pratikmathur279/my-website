@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './WorkExperience.css';
 import Experience from './Experience/Experience';
+import Loading from '../UI/Loading/Loading';
 
 const WorkExperience = (props) => {
     
@@ -19,6 +20,7 @@ const WorkExperience = (props) => {
             <div className={classes.Header}>
                 <h1>Professional Experience</h1>
             </div>
+            {props.loading && <Loading />}
             <div className={classes.WorkExperienceRow}>
                 {props.experience.map(buildRow)}
             </div>

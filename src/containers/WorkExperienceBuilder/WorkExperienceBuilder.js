@@ -9,6 +9,7 @@ class WorkExperienceBuilder extends Component {
     constructor() {
         super();
         this.state = {
+            loading: true,
             experience: []
         };
 
@@ -20,6 +21,7 @@ class WorkExperienceBuilder extends Component {
         
         this.actions.getExperience(state.experience, (data)=> {
           state.experience = data;
+          state.loading = false;
           this.setState(state);
         });   
     }
@@ -27,7 +29,7 @@ class WorkExperienceBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <WorkExperience experience={this.state.experience} />
+                <WorkExperience experience={this.state.experience} loading={this.state.loading}/>
             </Auxiliary>
         );
     }
