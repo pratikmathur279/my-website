@@ -20,6 +20,7 @@ provider:
     EXPERIENCE_TABLE: { "Ref": "ExperiencesDynamoDbTable" } 
     PROJECTS_TABLE: { "Ref": "ProjectsDynamoDbTable" } 
     SKILLS_TABLE: { "Ref": "SkillsDynamoDbTable" }
+    TECHNOLOGY_TABLE: { "Ref": "TechnologyDynamoDbTable" }
     CONTACT_TABLE: { "Ref": "ContactDynamoTable" }
     EMAIL: "pratikmathur279@gmail.com"
 
@@ -37,6 +38,7 @@ provider:
         - { "Fn::GetAtt": ["ProjectsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["SkillsDynamoDbTable", "Arn"] }
         - { "Fn::GetAtt": ["ContactDynamoTable", "Arn"] }
+        - { "Fn::GetAtt": ["TechnologyDynamoDbTable", "Arn"] }
 
     - Effect: "Allow"
       Action:
@@ -142,6 +144,15 @@ functions:
           method: post
           cors: true
 
+# create technology 
+  createTechnology:
+    handler: technology/create.create
+    events:
+      - http:
+          path: technology
+          method: post
+          cors: true
+
 # list skills
   listSkills:
     handler: skills/list.list
@@ -151,6 +162,15 @@ functions:
           method: get
           cors: true
 
+# list technology
+  listTechnology:
+    handler: technology/list.list
+    events:
+      - http:
+          path: technology
+          method: get
+          cors: true          
+
 # get skills
   getSkills:
     handler: skills/get.get
@@ -159,13 +179,31 @@ functions:
           path: skills/{id}
           method: get
           cors: true
-    
+
+# get technology
+  getTechnology:
+    handler: technology/get.get
+    events:
+      - http:
+          path: technology/{id}
+          method: get
+          cors: true          
+
 #add multiple skills
   addSkills:
     handler: skills/addSkills.addSkills
     events:
       - http:
           path: addskills
+          method: post
+          cors: true
+
+#add multiple technologies
+  addTechnology:
+    handler: technology/addTechnology.addTechnology
+    events:
+      - http:
+          path: addTechnology
           method: post
           cors: true
 
@@ -256,3 +294,20 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:service}-skills-data
+
+    TechnologyDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:service}-technology-data

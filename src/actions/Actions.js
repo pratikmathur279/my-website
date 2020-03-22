@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class Actions {
     getSkills(skills, callback){
-        axios('https://ewjvnu1fwl.execute-api.us-east-1.amazonaws.com/dev/skills',{
+        axios('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/skills',{
               crossDomain: true
         })
           .then((res)=>{
@@ -16,7 +16,7 @@ class Actions {
 
     sendContact(contact, callback){
         // console.log(contact);
-        axios.post('https://ewjvnu1fwl.execute-api.us-east-1.amazonaws.com/dev/contact', contact, { crossDomain: true})
+        axios.post('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/contact', contact, { crossDomain: true})
         .then((res, err) => {
             if(!err){
                 console.log("data saved!");
@@ -28,7 +28,7 @@ class Actions {
 
     sendEmail(email, callback){
         // console.log(email);
-        axios.post('https://ewjvnu1fwl.execute-api.us-east-1.amazonaws.com/dev/email/send', email, { crossDomain: true})
+        axios.post('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/email/send', email, { crossDomain: true})
         .then((res, err) => {
             if(!err){
                 console.log("data saved!");
@@ -39,7 +39,7 @@ class Actions {
     }
 
     getExperience(experience, callback){
-        axios('https://ewjvnu1fwl.execute-api.us-east-1.amazonaws.com/dev/experience', {
+        axios('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/experience', {
             crossDomain: true
         })
         .then((res) => {
@@ -59,12 +59,23 @@ class Actions {
     }
 
     getProjects(experience, callback){
-        axios('https://ewjvnu1fwl.execute-api.us-east-1.amazonaws.com/dev/projects', {
+        axios('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/projects', {
             crossDomain: true
         })
         .then((res) => {
             var data = res.data;
             // console.log(data);
+            data.sort((a, b) => (a.index > b.index) ? 1 : -1);
+            callback(data);
+        })
+    }
+
+    getTechnology(tech, callback){
+        axios('https://n6j1yr1b43.execute-api.us-east-1.amazonaws.com/dev/technology', {
+            crossDomain: true
+        })
+        .then((res) => {
+            var data = res.data;
             data.sort((a, b) => (a.index > b.index) ? 1 : -1);
             callback(data);
         })

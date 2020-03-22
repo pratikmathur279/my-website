@@ -12,18 +12,14 @@ const Experience = ( props ) => {
 
     return(
         <div className={classes.Experience}>
-            <h3>{props.data.name}</h3>
-           
+            <h3>{props.data.position}</h3>
             <div className={classes.container}>
-                <h4>{props.data.position}</h4>
-                <p>{props.data.from} - {props.data.to}</p>
+                <h4>{props.data.name}, <span>{props.data.from} - {props.data.to}</span></h4>
             </div>
             {client ? <h4>Client: {client}</h4>: ""}
-            <h4>Responsibilities:</h4>
             <ul className={classes.responsibilities}>
                 {props.data.responsibilities.map(buildRow)}
             </ul>
-            <p><span>Environment: </span>{props.data.environment}</p>
         </div>
     )
 }

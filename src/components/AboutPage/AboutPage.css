@@ -1,0 +1,68 @@
+.Homepage {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.HomepageContainer{
+    display: block;
+    height: 100vh;
+    /* min-height: 800px; */
+    width: 100%;
+    overflow: none;
+    text-align: center;
+    align-items: center;
+
+    background: url("../../assets/Images/cover.png") center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-color: teal;
+}
+
+.HomepageContainer .title{
+    display: block;
+    position: absolute;
+    top: 15%;
+    margin-top: -40px;
+    left: 80px;
+    padding: 1px;
+    width: 500px;
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 1.6em;
+    text-align: left;
+    font-family: 'Bariol';
+    /* background-color: #0054a4; */
+}
+
+.HomepageContainer .title h3{
+    font-weight: 100;
+}
+
+@media screen and (max-width: 500px) {
+    .HomepageContainer .name {
+        padding-top: 50px;
+        font-size: 0.80em;
+    }
+
+    .HomepageContainer .title {
+        font-size: 0.70em;
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .HomepageContainer .name {
+        font-size: 0.65em; 
+    }
+
+    .HomepageContainer .title {
+        font-size: 0.65em;
+        padding: 1px;
+        width: 250px;
+    }
+}

@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: block;
     width: 90%;
-    padding: 20px 20px;
+    padding: 20px;
 }
 
 .NavLink {
@@ -18,7 +18,7 @@
     width: 100%;
     box-sizing: border-box;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     margin: auto;
 }
 
@@ -52,12 +52,13 @@
     .NavigationItem a:hover,
     .NavigationItem a:active,
     .NavigationItem a.active {
-        color: #8F5C2C;
+        color: #F5BD8F;
+        
         /* border-bottom: 4px solid #40A4C8; */
         /* color: white; */
     }
 
     .NavigationItem a:active {
-        color: #8F5C2C;
+        color: #F5BD8F;
     }
 }

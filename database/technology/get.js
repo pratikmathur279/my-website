@@ -6,7 +6,7 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.get = (event, context, callback) => {
   const params = {
-    TableName: process.env.CONTACT_TABLE,
+    TableName: process.env.TECHNOLOGY_TABLE,
     Key: {
       id: event.pathParameters.id,
     },
@@ -20,7 +20,7 @@ module.exports.get = (event, context, callback) => {
       callback(null, {
         statusCode: error.statusCode || 501,
         headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the contacts item.',
+        body: 'Couldn\'t fetch the todo item.',
       });
       return;
     }

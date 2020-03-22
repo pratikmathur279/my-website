@@ -11,9 +11,9 @@ const toolbar = ( props ) => (
         <nav className={classes.DesktopOnly}>
             <NavigationItems />
         </nav>
-        <div>
+        {/* <div>
             <AboutWebsite aboutToggleClicked={props.aboutToggleClicked} />
-        </div>
+        </div> */}
     </header>
 );
 
