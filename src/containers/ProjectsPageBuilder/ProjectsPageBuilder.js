@@ -28,9 +28,7 @@ class ProjectsPageBuilder extends Component {
         this.createRows = this.createRows.bind(this);
         this.openModalHandler = this.openModalHandler.bind(this);
         this.closeModalHandler = this.closeModalHandler.bind(this);
-        // this.nextSlide = this.nextSlide.bind(this);
         this.actions = new Actions();
-        // this.previousSlide = this.previousSlide.bind(this);
       }
       
       componentWillMount(){
@@ -49,7 +47,6 @@ class ProjectsPageBuilder extends Component {
       }
 
         openModalHandler(id){
-            console.log(id);
             let state = Object.assign({}, this.state);
             var projects = state.original;
 
@@ -59,8 +56,8 @@ class ProjectsPageBuilder extends Component {
                 }
             }
             state.showProject = true;
+            document.getElementsByTagName('body')[0].classList.add("no-scroll");
             this.setState(state);
-            console.log(state);
         }
 
         closeModalHandler = () => {
@@ -79,7 +76,11 @@ class ProjectsPageBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <h1 className={classes.ProjectsHeader}>Projects</h1>
+                <div className={classes.ProjectsContainer}>
+                    <div className={classes.title}>
+                        <h3 className={classes.ProjectsHeader}>Projects</h3>
+                    </div>
+                </div>
                 <Modal show={this.state.showProject} modalClosed={this.closeModalHandler}>
                     <ProjectInformation showProject={this.state.showProject} card={this.state.selected} />
                 </Modal>

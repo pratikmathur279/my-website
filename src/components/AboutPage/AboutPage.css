@@ -8,12 +8,11 @@
 .HomepageContainer{
     display: block;
     height: 100vh;
-    /* min-height: 800px; */
     width: 100%;
     overflow: none;
     text-align: center;
     align-items: center;
-
+    position: relative;
     background: url("../../assets/Images/cover.png") center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -25,14 +24,14 @@
 .HomepageContainer .title{
     display: block;
     position: absolute;
-    top: 15%;
-    margin-top: -40px;
-    left: 80px;
-    padding: 1px;
-    width: 500px;
+    top: 20%;
+    /* margin-top: -40px; */
+    left: 150px;
+    /* padding: 1px; */
+    width: 700px;
     color: white;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 4.5em;
     line-height: 1.6em;
     text-align: left;
     font-family: 'Bariol';

@@ -3,28 +3,19 @@
     flex-direction: row;
     width: 100%;
     margin: 0 auto;
+    justify-content: space-between;
 }
-
-/* .ProjectHeader {
-    display: none;
-} */
 
 .ProjectDiv{
     display: block;
-    margin: 20px auto 40px auto;
-    /* margin: auto; */
-    width: fit-content;
+    margin: 50px auto;
+    width: 90vw;
     text-align: center;
     align-items: center;
-/* margin-bottom: 20px; */
+    
 }
 
-/* .project img {
-    width: 300px;
-    margin-left: 20px;
-} */
-
-@media (max-width: 500px){
+@media (max-width: 800px){
     .ProjectRow{
         display: flex;
         flex-direction: column;

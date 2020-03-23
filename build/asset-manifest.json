@@ -1,17 +1,7 @@
 {
-  "main.css": "static/css/main.aa114ad7.css",
-  "main.css.map": "static/css/main.aa114ad7.css.map",
-  "main.js": "static/js/main.17bbfd6b.js",
-  "main.js.map": "static/js/main.17bbfd6b.js.map",
-  "static/media/Embr.png": "static/media/Embr.666900e0.png",
-  "static/media/backgammon.png": "static/media/backgammon.f6880618.png",
-  "static/media/burger-builder.png": "static/media/burger-builder.b7835e4b.png",
-  "static/media/cover.png": "static/media/cover.8715c355.png",
-  "static/media/loading.gif": "static/media/loading.bfb780d9.gif",
-  "static/media/mail.png": "static/media/mail.ad3eb307.png",
-  "static/media/not_found.png": "static/media/not_found.acdff509.png",
-  "static/media/pratik.jpg": "static/media/pratik.efd66af9.jpg",
-  "static/media/random-user.png": "static/media/random-user.d9550309.png",
-  "static/media/teams-chatbot.png": "static/media/teams-chatbot.a089a05d.png",
-  "static/media/totalmortgage_website.png": "static/media/totalmortgage_website.cb6315cd.png"
+  "main.css": "static/css/main.8774e62b.css",
+  "main.css.map": "static/css/main.8774e62b.css.map",
+  "main.js": "static/js/main.173d705b.js",
+  "main.js.map": "static/js/main.173d705b.js.map",
+  "static\\media\\cover.png": "static/media/cover.8715c355.png"
 }

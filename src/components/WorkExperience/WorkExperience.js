@@ -35,7 +35,7 @@ const WorkExperience = (props) => {
             <div className={classes.Container}>
                 <div className={classes.Content}>
                     <div className={classes.heading}>
-                        <h1>Dig a little deeper.</h1>
+                        <h3>Dig a little deeper.</h3>
                     </div>
                     <div className={classes.download}>
                         <a href="https://pratik-resume.s3.amazonaws.com/PratikMathur-Resume.pdf" target="_blank" className={classes.button}>Download Resume →</a>

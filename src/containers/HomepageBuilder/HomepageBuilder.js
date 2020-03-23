@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import Homepage from '../../components/Homepage/Homepage';
-import pratik from '../../assets/Images/pratik.jpg';
 
 import Actions from '../../actions/Actions';
 
@@ -11,7 +10,6 @@ class HomepageBuilder extends Component {
         super();
         this.state = {
           isFlipped: false,
-          image: pratik,
           name: 'Pratik Mathur',
           hexagons: [
               {id:0, name: 'speedometer', title: 'Fast', desc: 'Fast load times and lag free interaction'}, {id:1, name: 'laptop', title: 'Responsive', desc: 'My layouts will work on any device.'}, {id:2, name: 'lightbulb', title: 'Intuitive', desc: 'Strong preference for easy to use, intuitive UX/UI.'}, {id:3, name: 'flight', title: 'Dynamic', desc: 'I love making dynamic websites'}
@@ -27,8 +25,8 @@ class HomepageBuilder extends Component {
 
       componentWillMount(){
           let state = Object.assign({}, this.state);
-          let split = this.createRows(state.hexagons);
-          state.hexagons = split;
+          // let split = this.createRows(state.hexagons);
+          // state.hexagons = split;
           this.actions.getSkills(state.skills, (data)=> {
             state.skills = data;
             this.setState(state);
@@ -62,7 +60,7 @@ class HomepageBuilder extends Component {
     render () {
         return (
             <Auxiliary>
-                <Homepage image={this.state.image} alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
+                <Homepage image='./images/pratik.jpg' alt={this.state.name} hexagons={this.state.hexagons} skills={this.state.skills} projects={this.state.projects} mouseClick={this.handleClick.bind(this)} isFlipped={this.state.isFlipped} />
             </Auxiliary>
         );
     }

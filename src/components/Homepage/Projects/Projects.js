@@ -4,9 +4,9 @@ import ReactCardFlip from 'react-card-flip';
 import classes from './Projects.css';
 import ProjectFront from './Project/ProjectFront';
 import ProjectBack from './Project/ProjectBack';
-// import project1 from '../../../assets/Images/Embr.png';
-// import project2 from '../../../assets/Images/totalmortgage_website.png';
-// import project3 from '../../../assets/Images/project-3.jpg';
+// import project1 from './images/Embr.png';
+// import project2 from './images/totalmortgage_website.png';
+// import project3 from './images/project-3.jpg';
 
 const projects = (props) => {
 

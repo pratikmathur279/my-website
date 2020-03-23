@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import WorkExperience from '../../components/WorkExperience/WorkExperience';
+import Education from '../../components/Education/Education'
 
 import Actions from '../../actions/Actions';
 import { clone } from 'hoek';
@@ -74,6 +75,7 @@ class ResumeBuilder extends Component {
         return (
             <Auxiliary>
                 <WorkExperience experience={this.state.experience} loading={this.state.loading} technology={this.state.technology} />
+                <Education />
             </Auxiliary>
         );
     }
