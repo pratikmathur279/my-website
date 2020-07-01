@@ -80,6 +80,14 @@ class Actions {
             callback(data);
         })
     }
+
+    getInstagramFeed(feed, callback){
+        axios('https://api.instagram.com/oembed?url='+feed)
+            .then((res) => {
+                callback(res.data);
+            });
+
+    }
 }
 
 export default Actions;

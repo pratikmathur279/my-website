@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import WorkExperience from '../../components/WorkExperience/WorkExperience';
-import Education from '../../components/Education/Education'
+import Education from '../../components/Education/Education';
+import Certifications from '../../components/Certifications/Certifications';
 
 import Actions from '../../actions/Actions';
-import { clone } from 'hoek';
 
 import _ from 'lodash';
 
@@ -76,6 +76,7 @@ class ResumeBuilder extends Component {
             <Auxiliary>
                 <WorkExperience experience={this.state.experience} loading={this.state.loading} technology={this.state.technology} />
                 <Education />
+                <Certifications />
             </Auxiliary>
         );
     }

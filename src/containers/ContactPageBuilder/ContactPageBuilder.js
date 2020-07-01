@@ -65,7 +65,6 @@ class ContactPageBuilder extends Component {
                 if(sent){
                     this.actions.sendContact(emailObject, (data)=> {
                         if(data){
-                            // window.open(`mailto:pratikmathur279@gmail.com?subject=${emailObject.subject}&body=${emailObject.message}`);
                             state.formControls = state.initialState;
                             state.emailSent = true;
                             this.setState(state);
@@ -123,6 +122,7 @@ class ContactPageBuilder extends Component {
             <Auxiliary>
                 <div>
                     <ContactPageContainer emailSent={this.state.emailSent} errors={this.state.errors} formControls={this.state.formControls} onChange={this.onChange} onClick={this.onClick} />
+                    
                 </div>
             </Auxiliary>
         );

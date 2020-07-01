@@ -33,13 +33,14 @@
     display: block;
     margin: 0 auto;
     padding: 25px 0;
+    
 }
 .HomePageContainer {
     width: 100%;
     margin: auto;
     position: relative;
     height: 100%;
-    min-height: 800px;
+    min-height: 100vh;
     overflow: none;
     text-align: center;
     font-weight: bold;
@@ -48,6 +49,12 @@
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
+
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+            -moz-animation: fadein 1s; /* Firefox */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+            -o-animation: fadein 1s; /* Opera */
+
     /* background-repeat: no-repeat; */
     background-color: teal;
 }
@@ -70,4 +77,22 @@
     .SkillsContainer{
         width: 90%;
     }
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

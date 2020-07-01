@@ -18,12 +18,16 @@
 }
 
 button {
-    padding: 15px 20px;
+    padding: 12px 20px;
     margin-top: 10px;
     align-self: left;
-    background: black;
+    background: #2E60AA;
+    border: none;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
+    width: 300px;
+    border-radius: 30px;
+    cursor: pointer
 }
 
 @media (max-width: 500px){
@@ -34,6 +38,7 @@ button {
 
     .ContactForm h3 {
         width: inherit;
+        font-size: 25px;
     }
     .Form {
         width: fit-content;

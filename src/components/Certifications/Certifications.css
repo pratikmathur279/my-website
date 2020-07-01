@@ -1,6 +1,6 @@
 .Section{
     height: fit-content;
-    padding: 25px 60px 0;
+    padding: 25px 60px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -13,7 +13,7 @@
     
 }
 
-.EducationRow {
+.CertificationsRow {
     /* width: 100%; */
     width: calc(100% - 300px);
     padding: 0 75px;
@@ -21,11 +21,11 @@
     padding-top: 15px;
 }
 
-.Education{
+.Certifications{
     padding-bottom: 5px;
 }
 
-.Education h3{
+.Certifications h3{
     overflow-wrap: break-word;
 }
 
@@ -38,12 +38,12 @@
         margin: 5px 0;
     }
 
-    .EducationRow {
+    .CertificationsRow {
         padding: 0 ;
         width: 100%;
     }
 
-    .Education{
+    .Certifications{
         padding-bottom: 10px;
     }
 }
